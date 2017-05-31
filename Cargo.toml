@@ -1,0 +1,12 @@
+[package]
+name = "bbcode"
+version = "1.0.0"
+authors = ["Chris MacNaughton <chris@centaurisolutions.nl>"]
+description = """
+bbcode is a trait and impl for &str that compiles BBCode into HTML
+"""
+license = "MIT/Apache-2.0"
+
+[dependencies]
+lazy_static = "0.2"
+regex = "0.2"
