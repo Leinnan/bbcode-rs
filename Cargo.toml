@@ -6,6 +6,7 @@ description = """
 bbcode is a trait and impl for &str that compiles BBCode into HTML
 """
 license = "MIT/Apache-2.0"
+repository = "https://github.com/ChrisMacNaughton/bbcode-rs"
 
 [dependencies]
 lazy_static = "0.2"
