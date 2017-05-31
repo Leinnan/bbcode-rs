@@ -337,13 +337,17 @@ pub fn patterns() -> &'static [(Regex, &'static str); 26] {
     &PATTERNS
 }
 
+pub fn str_to_html(input: &str) -> String {
+    let mut output = code(&input);
+    for &(ref pattern, replace) in patterns() {
+        output = pattern.replace_all(&output, replace).into_owned();
+    }
+    output
+}
+
 impl<'a> BBCode for &'a str {
     fn as_html(&self) -> String {
+        str_to_html(&self)
 
-        let mut output = code(&self);
-        for &(ref pattern, replace) in patterns() {
-            output = pattern.replace_all(&output, replace).into_owned();
-        }
-        output
     }
 }

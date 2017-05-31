@@ -5,11 +5,27 @@ extern crate bbcode;
 
 #[cfg(test)]
 mod tests {
-    use bbcode::BBCode;
+    use bbcode::{BBCode, str_to_html};
     use test::Bencher;
 
     #[bench]
     fn bench_table_full(b: &mut Bencher) {
+        b.iter(|| {
+            str_to_html(r"[table]
+              [tr]
+                [th]Name[/th]
+                [th]Date[/th]
+              [/tr]
+              [tr]
+                [td]Test[/td]
+                [td]Yesterday[/td]
+              [/tr]
+[/table]")
+        })
+    }
+
+    #[bench]
+    fn bench_table_full_impl(b: &mut Bencher) {
         b.iter(|| {
             r"[table]
               [tr]
