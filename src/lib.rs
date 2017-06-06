@@ -244,7 +244,7 @@ test</div>"#)
 
 /// BBCode is a trait that will convert the input BBCode into HTML
 ///
-/// Included in this is a default ipmp for &str, allowing you to
+/// Included in this is a default ipml for &str, allowing you to
 ///
 /// ```
 /// use bbcode::BBCode;
